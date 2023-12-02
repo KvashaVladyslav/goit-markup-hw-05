@@ -510,7 +510,7 @@ ul {
     z-index: 999999;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(46, 47, 66, 0.4);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -531,11 +531,13 @@ ul {
     width: 408px;
     min-height: 584px;
     background-color: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     padding-left: 24px;
     padding-top: 72px;
     padding-right: 24px;
     padding-bottom: 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
@@ -546,6 +548,31 @@ ul {
     position: absolute;
     top: 24px;
     right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-close-btn-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-close:hover,
+.icon-close:focus {
+    fill: #ffffff;
 }
 
 .review-form-text {
@@ -553,8 +580,8 @@ ul {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-    line-height: 1.0;
-    letter-spacing: 0.01em;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     margin-bottom: 16px;
 }
 
@@ -571,8 +598,8 @@ ul {
     color: #8E8F99;
     font-size: 12px;
     font-weight: 400;
-    line-height: 0.58em;
-    letter-spacing: 0.02em;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     margin-bottom: 4px;
     
 }
@@ -583,6 +610,7 @@ ul {
     border-radius: 4px;
     border: 1px solid  rgba(46, 47, 66, 0.40);
     padding-left: 38px;
+    background-color: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: 0px solid transparent;
 }
@@ -607,15 +635,21 @@ ul {
     fill:#4D5AE5;
 }
 
+.review-form-textarea-wrapper {
+    margin-bottom: 16px;
+}
+
 .review-form-comment {
     font-size: 12px;
     font-weight: 400;
-    line-height: 0.58;
-    letter-spacing: 0.02em;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     width: 100%;
     min-height: 120px;
     border-radius: 4px;
+    color: rgba(46, 47, 66, 0.40);
     border: 1px solid  rgba(46, 47, 66, 0.40);
+    background-color: transparent;
     padding: 8px 16px;
     resize: none;
     outline: 0px solid transparent;
@@ -640,6 +674,8 @@ ul {
     border-radius: 2px;
     cursor: pointer;
     margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
 }
 
 .review-form-checkbox-wrapper {
@@ -649,7 +685,9 @@ ul {
 .review-form-checkbox:checked
 + .review-form-checkbox-label
 > .review-form-custom-checkbox {
-    background-color: #4D5AE5;
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
 }
 
 .review-form-custom-checkbox-icon {
@@ -672,16 +710,16 @@ ul {
     color:  #8E8F99;
     font-size: 12px;
     font-weight: 400;
-    line-height: 0.58;
-    letter-spacing: 0.03em;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
 }
 
 .review-form-checkbox-label a {
     color:  #4D5AE5;
     font-size: 12px;
     font-weight: 400;
-    line-height: 0.66;
-    letter-spacing: 0.03em;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     text-decoration: underline;
 }
 
@@ -718,33 +756,34 @@ ul {
     color:  #FFF;
     font-size: 16px;
     font-weight: 500;
-    line-height: 1.0;
+    line-height: 1.5;
     letter-spacing: 0.02em;
     margin-bottom: 16px;
 }
 
 .footer-form {
-    padding: 0;
+    display: flex;
+    gap: 24px;
 }
 
+
 .footer-form-input {
-    display: inline-block ;
-    min-width: 264px;
+    width: 264px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid  #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid  #FFFFFF;
     background-color: transparent;
-    padding: 8px 16px;;
-    color: #FFF;
+    padding-left: 16px;
+    color: #FFFFFF;
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.0;
-    letter-spacing: 0.03em;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
 .footer-form-input::placeholder {
-    color:  #FFF;
+    color:  #FFFFFF;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.0;
@@ -753,9 +792,10 @@ ul {
 
 
 .footer-form-btn {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 165px;
     padding: 8px 24px;
     border-radius: 4px;
     background-color: #4D5AE5;
@@ -763,8 +803,8 @@ ul {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-    line-height: 0.6;
-    letter-spacing: 0.05em;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     border: none;
     cursor: pointer;
 }
