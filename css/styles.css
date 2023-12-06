@@ -643,6 +643,7 @@ ul {
     width: 100%;
     min-height: 120px;
     border-radius: 4px;
+    display: block;
     color: rgba(46, 47, 66, 0.40);
     border: 1px solid  rgba(46, 47, 66, 0.40);
     background-color: transparent;
